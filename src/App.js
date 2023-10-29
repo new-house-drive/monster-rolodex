@@ -83,8 +83,11 @@ class App extends Component {
   render() {
     console.log("render");
 
-    let filteredMonsters = this.state.monsters.filter((monster) => {
-      return monster.name.toLowerCase().includes(this.state.searchField);
+    const { monsters, searchField } = this.state
+    const { onSearchChange } = this
+ 
+    let filteredMonsters = monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(searchField);
     });
 
     return (
@@ -102,7 +105,7 @@ class App extends Component {
            * actions in response to user input, making it a crucial part of form handling in React.
            */
 
-          onChange={this.onSearchChange}
+          onChange={onSearchChange}
         />
 
         {filteredMonsters.map((monster) => {
