@@ -48,6 +48,24 @@ class App extends Component {
       )
       .then(console.log(this.state));
   }
+
+  onSearchChange = (event) => {
+    const searchField = event.target.value.toLowerCase();
+    /**
+     * The `setState` method is used to update the state of a React component. When called,
+     * it schedules a re-render of the component and its child components to reflect the
+     * new state. It can be used with an object that specifies the state changes or with
+     * a callback function to ensure the state changes are applied sequentially.
+     *
+     * It is important to note that `setState` does not immediately mutate the state; instead,
+     * it enqueues the changes, and React will batch and apply them in an optimized way. This
+     * asynchronous behavior allows React to perform efficient updates.
+     */
+    this.setState(() => {
+      return { searchField };
+    });
+  }
+
   /**
    * The `render` method in a React component is called by React whenever the component
    * needs to update its user interface. This includes the following situations:
@@ -84,22 +102,7 @@ class App extends Component {
            * actions in response to user input, making it a crucial part of form handling in React.
            */
 
-          onChange={(event) => {
-            const searchField = event.target.value.toLowerCase();
-            /**
-             * The `setState` method is used to update the state of a React component. When called,
-             * it schedules a re-render of the component and its child components to reflect the
-             * new state. It can be used with an object that specifies the state changes or with
-             * a callback function to ensure the state changes are applied sequentially.
-             *
-             * It is important to note that `setState` does not immediately mutate the state; instead,
-             * it enqueues the changes, and React will batch and apply them in an optimized way. This
-             * asynchronous behavior allows React to perform efficient updates.
-             */
-            this.setState(() => {
-              return { searchField };
-            });
-          }}
+          onChange={this.onSearchChange}
         />
 
         {filteredMonsters.map((monster) => {
