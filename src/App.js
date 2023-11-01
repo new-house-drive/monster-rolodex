@@ -25,7 +25,7 @@ class App extends Component {
       monsters: [],
       searchField: "",
     };
-    console.log("constructor");
+    // console.log("constructor");
   }
 
   /**
@@ -39,7 +39,7 @@ class App extends Component {
    * if necessary.
    */
   componentDidMount() {
-    console.log("Component did mount");
+    // console.log("Component did mount");
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) =>
@@ -82,7 +82,7 @@ class App extends Component {
    * UI based on its props and state and should not have side effects or modify state directly.
    */
   render() {
-    console.log("render");
+    // console.log("render");
 
     const { monsters, searchField } = this.state
     const { onSearchChange } = this
@@ -118,7 +118,7 @@ class App extends Component {
           );
         })} */}
       {/* Always capitalize the first letter of hand-made component */}
-      <CardList />
+      <CardList monsters="I am the mosnter!"/>
       </div>
     );
   }
