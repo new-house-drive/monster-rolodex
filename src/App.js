@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Component } from "react";
+import CardList from "./components/card-list/card-list.component.jsx";
 
 // Essentially we are telling the React.. what I want to render?
 // whatever is in my render() method
@@ -93,6 +94,7 @@ class App extends Component {
     return (
       <div className="App">
         <input
+        // those are props!
           type="search"
           className="search-box"
           placeholder="Search monsters"
@@ -108,13 +110,15 @@ class App extends Component {
           onChange={onSearchChange}
         />
 
-        {filteredMonsters.map((monster) => {
+        {/* {filteredMonsters.map((monster) => {
           return (
             <div key={monster.id}>
               <h1>{monster.name}</h1>
             </div>
           );
-        })}
+        })} */}
+      {/* Always capitalize the first letter of hand-made component */}
+      <CardList />
       </div>
     );
   }
