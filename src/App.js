@@ -46,8 +46,8 @@ class App extends Component {
         this.setState(() => {
           return { monsters: users };
         })
-      )
-      .then(console.log(this.state));
+      );
+    // .then(console.log(this.state));
   }
 
   onSearchChange = (event) => {
@@ -65,7 +65,7 @@ class App extends Component {
     this.setState(() => {
       return { searchField };
     });
-  }
+  };
 
   /**
    * The `render` method in a React component is called by React whenever the component
@@ -84,9 +84,9 @@ class App extends Component {
   render() {
     // console.log("render");
 
-    const { monsters, searchField } = this.state
-    const { onSearchChange } = this
- 
+    const { monsters, searchField } = this.state;
+    const { onSearchChange } = this;
+
     let filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(searchField);
     });
@@ -94,7 +94,7 @@ class App extends Component {
     return (
       <div className="App">
         <input
-        // those are props!
+          // those are props!
           type="search"
           className="search-box"
           placeholder="Search monsters"
@@ -117,8 +117,11 @@ class App extends Component {
             </div>
           );
         })} */}
-      {/* Always capitalize the first letter of hand-made component */}
-      <CardList monsters="I am the mosnter!"/>
+        {/* Always capitalize the first letter of hand-made component */}
+        <CardList
+          monsters={filteredMonsters}
+          anything="Supermama! Yaitso Dmytra Qarpachova"
+        />
       </div>
     );
   }
