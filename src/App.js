@@ -120,7 +120,6 @@ class App extends Component {
         {/* Always capitalize the first letter of hand-made component */}
         <CardList
           monsters={filteredMonsters}
-          anything="Supermama! Yaitso Dmytra Qarpachova"
         />
       </div>
     );
