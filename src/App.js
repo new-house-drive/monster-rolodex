@@ -96,7 +96,7 @@ class App extends Component {
         <SearchBox
           onChangeHandler={onSearchChange}
           placeholder="Search for monsters!"
-          className="search-box"
+          className="monsters-search-box"
         />
 
         {/* {filteredMonsters.map((monster) => {
