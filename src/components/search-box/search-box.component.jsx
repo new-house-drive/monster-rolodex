@@ -7,7 +7,7 @@ class SearchBox extends Component {
             <input
             // those are props!
             type="search"
-            className="search-box"
+            className={`search-box ${this.props.className}`}
             placeholder={this.props.placeholder}
             /**
              * The `onChange` method is a callback function used to handle changes in form input
