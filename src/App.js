@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Component } from "react";
 import CardList from "./components/card-list/card-list.component.jsx";
-
+import SearchBox from "./components/search-box/search-box.component.jsx";
 // Essentially we are telling the React.. what I want to render?
 // whatever is in my render() method
 class App extends Component {
@@ -93,21 +93,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input
-          // those are props!
-          type="search"
+        <SearchBox
+          onChangeHandler={onSearchChange}
+          placeholder="Search for monsters!"
           className="search-box"
-          placeholder="Search monsters"
-          /**
-           * The `onChange` method is a callback function used to handle changes in form input
-           * elements like text fields, checkboxes, and radio buttons. It is triggered when the
-           * user interacts with the input, such as typing or making a selection.
-           *
-           * This method is typically used to update the component's state or perform specific
-           * actions in response to user input, making it a crucial part of form handling in React.
-           */
-
-          onChange={onSearchChange}
         />
 
         {/* {filteredMonsters.map((monster) => {
@@ -118,9 +107,7 @@ class App extends Component {
           );
         })} */}
         {/* Always capitalize the first letter of hand-made component */}
-        <CardList
-          monsters={filteredMonsters}
-        />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
