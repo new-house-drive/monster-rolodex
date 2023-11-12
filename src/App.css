@@ -13,3 +13,10 @@ body {
   );
   text-align: center;
 }
+
+.app-title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: large;
+  color: rgb(0, 255, 213);
+}
