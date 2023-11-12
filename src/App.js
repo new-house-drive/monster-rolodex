@@ -93,6 +93,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Robohash Monster Facebook</h1>
         <SearchBox
           onChangeHandler={onSearchChange}
           placeholder="Search for monsters!"
