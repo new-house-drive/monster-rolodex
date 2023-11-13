@@ -14,11 +14,12 @@ import SearchBox from "./components/search-box/search-box.component.jsx";
 // Functional Component
 const App = () => {
 
+  const [searchField, setSearchField] = useState('') // [value, setValue]
+
   const onSearchChange = (event) => {
-    const searchField = event.target.value.toLowerCase();
-    this.setState(() => {
-      return { searchField };
-    });
+    const searchFieldString = event.target.value.toLowerCase();
+    setSearchField(searchFieldString)
+    console.log(searchField)
   };
 
 
