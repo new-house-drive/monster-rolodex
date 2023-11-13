@@ -1,12 +1,27 @@
+
 import logo from "./logo.svg";
 import "./App.css";
+
+// Class component import
 import { Component } from "react";
+// Functional component import
+import { useState } from "react";
+
 import CardList from "./components/card-list/card-list.component.jsx";
 import SearchBox from "./components/search-box/search-box.component.jsx";
 
 
-
+// Functional Component
 const App = () => {
+
+  const onSearchChange = (event) => {
+    const searchField = event.target.value.toLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  };
+
+
   return (
     <div className="App">
       <h1 className="app-title">Robohash Monster Facebook</h1>
@@ -24,7 +39,7 @@ const App = () => {
         );
       })} */}
       {/* Always capitalize the first letter of hand-made component */}
-      <CardList monsters={filteredMonsters} />
+      {/* <CardList monsters={filteredMonsters} /> */}
     </div>
   );
 }
@@ -34,6 +49,7 @@ const App = () => {
 
 // Essentially we are telling the React.. what I want to render?
 // whatever is in my render() method
+// Class component
 class AppOlder extends Component {
   /**
    * The constructor method is a special method in a React component that gets
