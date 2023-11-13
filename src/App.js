@@ -3,9 +3,38 @@ import "./App.css";
 import { Component } from "react";
 import CardList from "./components/card-list/card-list.component.jsx";
 import SearchBox from "./components/search-box/search-box.component.jsx";
+
+
+
+const App = () => {
+  return (
+    <div className="App">
+      <h1 className="app-title">Robohash Monster Facebook</h1>
+      <SearchBox
+        onChangeHandler={onSearchChange}
+        placeholder="Search for monsters!"
+        className="monsters-search-box"
+      />
+
+      {/* {filteredMonsters.map((monster) => {
+        return (
+          <div key={monster.id}>
+            <h1>{monster.name}</h1>
+          </div>
+        );
+      })} */}
+      {/* Always capitalize the first letter of hand-made component */}
+      <CardList monsters={filteredMonsters} />
+    </div>
+  );
+}
+
+
+
+
 // Essentially we are telling the React.. what I want to render?
 // whatever is in my render() method
-class App extends Component {
+class AppOlder extends Component {
   /**
    * The constructor method is a special method in a React component that gets
    * called when the component is first initialized. It's primarily used for
