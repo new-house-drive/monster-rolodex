@@ -1,19 +1,31 @@
 import { Component } from "react";
-import "./card-container.styles.css"
+import "./card-container.styles.css";
 
-class CardContainer extends Component {
-    render() {
+const CardContainer = ({ name, id, email }) => {
+  <div className="card-container" key={id}>
+    <img
+      alt={`monster ${name}`}
+      src={`https://robohash.org/${id}?set=set1&size=180x180`}
+    />
+    <h3>{name}</h3>
+    <p>{email}</p>
+  </div>;
+};
 
-        const {name, id, email } = this.props
+// Old CardContainer Class component
+// class CardContainer extends Component {
+//     render() {
 
-        return (
-            <div className="card-container" key={id}>
-            <img alt={`monster ${name}`} src={`https://robohash.org/${id}?set=set1&size=180x180`} />
-            <h3>{name}</h3>
-            <p>{email}</p>
-          </div>
-          )
-    }
-}
+//         const {name, id, email } = this.props
+
+//         return (
+//             <div className="card-container" key={id}>
+//             <img alt={`monster ${name}`} src={`https://robohash.org/${id}?set=set1&size=180x180`} />
+//             <h3>{name}</h3>
+//             <p>{email}</p>
+//           </div>
+//           )
+//     }
+// }
 
 export default CardContainer;
