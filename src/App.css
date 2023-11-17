@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Lumanosimo';
-  src: url('../public/fonts/Lumanosimo-Regular.ttf');
+  font-family: 'BigelowRules';
+  src: url('../public/fonts/BigelowRules-Regular.ttf');
 }
 
 body {
@@ -24,5 +24,5 @@ body {
   margin-bottom: 20px;
   font-size: 70px;
   color: rgb(0, 255, 213);
-  font-family: 'Lumanosimo';
+  font-family: 'BigelowRules';
 }
